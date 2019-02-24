@@ -1,18 +1,16 @@
-plugins {
-    java
-}
-
 group = "com.github.jonathanxd.medium"
 version = "1.0-SNAPSHOT"
+
+plugins {
+    kotlin("jvm") version "1.3.21"
+}
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    testCompile("junit", "junit", "4.12")
-}
-
-configure<JavaPluginConvention> {
-    sourceCompatibility = JavaVersion.VERSION_1_8
+    implementation(kotlin("stdlib-jdk8"))
+    testImplementation(kotlin("test"))
+    testImplementation(kotlin("test-junit"))
 }
